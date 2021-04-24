@@ -12,7 +12,7 @@ if (window.__kbnStrictCsp__ && window.__kbnCspNotEnforced__) {
     window.console.log("^ A single error about an inline script not firing due to content security policy is expected!");
   }
   var loadingMessage = document.getElementById('kbn_loading_message');
-  loadingMessage.style.display = 'flex';
+  loadingMessage.style.display = 'none';
 
   window.onload = function () {
     function failure() {
