@@ -55,7 +55,7 @@ function uiRenderMixin(kbnServer, server, config) {
     async handler(request, h) {
       const soClient = kbnServer.newPlatform.start.core.savedObjects.getScopedClient(_server.KibanaRequest.from(request));
       const uiSettings = kbnServer.newPlatform.start.core.uiSettings.asScopedToClient(soClient);
-      const darkMode = !authEnabled || request.auth.isAuthenticated ? await uiSettings.get('theme:darkMode') : false;
+      const darkMode = !authEnabled || request.auth.isAuthenticated ? await uiSettings.get('theme:darkMode') : true;
       const themeVersion = !authEnabled || request.auth.isAuthenticated ? await uiSettings.get('theme:version') : 'v7';
       const themeTag = `${themeVersion === 'v7' ? 'v7' : 'v8'}${darkMode ? 'dark' : 'light'}`;
       const buildHash = server.newPlatform.env.packageInfo.buildNum;
