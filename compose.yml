@@ -13,7 +13,8 @@ services:
       - dark-network
       
   kibana-dark:
-    image: docker.elastic.co/kibana/kibana:7.12.0
+    image: kibana-dark:latest
+    #image: docker.elastic.co/kibana/kibana:7.12.0
     restart: unless-stopped
     ports:
       - "80:5601"
